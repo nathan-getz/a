@@ -21,11 +21,19 @@ const GRMN1020_CurrentModule = {
 
 const CSCI2270_CurrentAssignmentRepo = {
     getURL() {
-        let day = new Date().getDay() - 1;
-        let weekNum = Math.floor((new Date() - new Date(2023, 0, 8, 0, 0)) / (7 * 24 * 60 * 60 * 1000)).toString();
-        let panelNum = Math.min(Math.max(day - (day > 2), 0), 3).toString();
+        let weekNum = Math.floor(daysSince(new Date(2023, 0, 16, 0, 0)) / 7);
+        weekNum -= (weekNum > 6) + (weekNum > 10);
+        
+        return `https://github.com/cu-csci-2270-spring-2023/assignment-${weekNum}-nathan-getz`;
+    }
+}
 
-        return `https://canvas.colorado.edu/courses/90354/pages/week-${weekNum}-overview#kl_panel_${panelNum}_content`;
+const CSCI2270_CurrentRecitationRepo = {
+    getURL() {
+        let weekNum = Math.floor(daysSince(new Date(2023, 0, 16, 0, 0)) / 7);
+        weekNum -= (weekNum > 6) + (weekNum > 10);
+
+        return `https://github.com/cu-csci-2270-spring-2023/recitation-${++weekNum}-nathan-getz`
     }
 }
 
@@ -37,6 +45,8 @@ const id = urlParams.get("id").toString();
  */
 function getUrl(id) {
     if (id == "grmn1020") return GRMN1020_CurrentModule.getURL();
+    if (id == "csci2270_a") return CSCI2270_CurrentAssignmentRepo.getURL();
+    if (id == "csci2270_r") return CSCI2270_CurrentRecitationRepo.getURL();
 
     return id;
 }
