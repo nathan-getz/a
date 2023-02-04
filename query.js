@@ -60,7 +60,7 @@ function redirect(id) {
 
     let meta = doc.createElement("meta");
     meta.httpEquiv = "Refresh";
-    meta.content = "0; url=" + url;
+    meta.content = "1; url=" + url;
     doc.head.appendChild(meta);
 
     return true;
