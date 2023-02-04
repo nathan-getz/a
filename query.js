@@ -36,7 +36,7 @@ const id = urlParams.get("id").toString();
  * @param {String} id
  */
 function getUrl(id) {
-    if (id == "grmn1020_current_module") return GRMN1020_CurrentModule.getURL();
+    if (id == "grmn1020") return GRMN1020_CurrentModule.getURL();
 
     return id;
 }
