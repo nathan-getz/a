@@ -43,10 +43,10 @@ const id = urlParams.get("id").toString();
 /**
  * @param {String} id
  */
-function getUrl(id) {
+function getUrl(id, username) {
     if (id == "grmn1020") return GRMN1020_CurrentModule.getURL();
-    if (id == "csci2270_a") return CSCI2270_CurrentAssignmentRepo.getURL();
-    if (id == "csci2270_r") return CSCI2270_CurrentRecitationRepo.getURL();
+    if (id == "csci2270_a") return CSCI2270_CurrentAssignmentRepo.getURL(username);
+    if (id == "csci2270_r") return CSCI2270_CurrentRecitationRepo.getURL(username);
 
     return id;
 }
@@ -54,8 +54,8 @@ function getUrl(id) {
 /**
  * @param {String} id 
  */
-function redirect(id) {
-    let url = getUrl(id);
+function redirect(id, username) {
+    let url = getUrl(id, username);
     if (url == id) return false;
 
     let meta = doc.createElement("meta");
@@ -66,4 +66,4 @@ function redirect(id) {
     return true;
 }
 
-redirect(id);
+redirect(id, username);
