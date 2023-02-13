@@ -20,20 +20,20 @@ const GRMN1020_CurrentModule = {
 }
 
 const CSCI2270_CurrentAssignmentRepo = {
-    getURL() {
+    getURL(username = "nathan-getz") {
         let weekNum = Math.floor(daysSince(new Date(2023, 0, 16, 0, 0)) / 7);
         weekNum -= (weekNum > 6) + (weekNum > 10);
         
-        return `https://github.com/cu-csci-2270-spring-2023/assignment-${weekNum}-nathan-getz`;
+        return `https://github.com/cu-csci-2270-spring-2023/assignment-${weekNum}-${username}`;
     }
 }
 
 const CSCI2270_CurrentRecitationRepo = {
-    getURL() {
+    getURL(username = "nathan-getz) {
         let weekNum = Math.floor(daysSince(new Date(2023, 0, 16, 0, 0)) / 7);
         weekNum -= (weekNum > 6) + (weekNum > 10);
 
-        return `https://github.com/cu-csci-2270-spring-2023/recitation-${++weekNum}-nathan-getz`
+        return `https://github.com/cu-csci-2270-spring-2023/recitation-${++weekNum}-${username}`
     }
 }
 
