@@ -43,7 +43,7 @@ const id = urlParams.get("id").toString();
 /**
  * @param {String} id
  */
-function getUrl(id, username) {
+function getUrl(id, username="nathan-getz") {
     if (id == "grmn1020") return GRMN1020_CurrentModule.getURL();
     if (id == "csci2270_a") return CSCI2270_CurrentAssignmentRepo.getURL(username);
     if (id == "csci2270_r") return CSCI2270_CurrentRecitationRepo.getURL(username);
@@ -52,7 +52,8 @@ function getUrl(id, username) {
 }
 
 /**
- * @param {String} id 
+ * @param {String} id
+ * @param {String} username
  */
 function redirect(id, username) {
     let url = getUrl(id, username);
