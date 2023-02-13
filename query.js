@@ -29,7 +29,7 @@ const CSCI2270_CurrentAssignmentRepo = {
 }
 
 const CSCI2270_CurrentRecitationRepo = {
-    getURL(username = "nathan-getz) {
+    getURL(username = "nathan-getz") {
         let weekNum = Math.floor(daysSince(new Date(2023, 0, 16, 0, 0)) / 7);
         weekNum -= (weekNum > 6) + (weekNum > 10);
 
