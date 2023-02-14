@@ -40,7 +40,7 @@ const CSCI2270_CurrentRecitationRepo = {
 const urlParams = new URL(window.location.toLocaleString()).searchParams;
 const id = urlParams.get("id").toString();
 const username = urlParams.get("username");
-username = ? (username != null) username.toString() : "nathan-getz;
+username = (username != null) ? username.toString() : "nathan-getz;
 
 /**
  * @param {String} id
