@@ -8,7 +8,7 @@ function daysSince(date) {
 
 const GRMN1020_CurrentModule = {
     getURL() {
-        let weekNum = Math.floor(daysSince(new Date(2024, 0, 15, 0, 0)) / 7);
+        let weekNum = Math.floor(daysSince(new Date(2024, 0, 15, 0, 0)) / 7) + 1;
         let panelNum = this.getPanelNum();
         
         return `https://canvas.colorado.edu/courses/101256/pages/week-${weekNum}-overview#kl_panel_${panelNum}_content`;
